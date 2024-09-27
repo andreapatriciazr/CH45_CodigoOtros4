@@ -1,15 +1,14 @@
-package com.generation;
+import java.util.Scanner; // importar el scanner y quitar paquetes que no hay
 
-public class Codigo4 {
-
-    Scanner s = new Scanner();
+public class piedraPapelTijera { // definir un nombre relevante a la clase
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
     
-    System.out.print("Turno del jugador 1 (introduzca piedra, papel o tijeras): ");
-    String j1 = s.nextLine();
+        System.out.print("Turno del jugador 1 (introduzca piedra, papel o tijeras): ");
+        String j1 = scanner.nextLine().toLowerCase(); 
     
-    System.out.print("Turno del jugador 1 (introduzca piedra, papel o tijeras): ");
-    Scanner s2 = new Scanner();
-    String j2 = s.nextLine();
+        System.out.print("Turno del jugador 2 (introduzca piedra, papel o tijeras): ");
+        String j2 = scanner.nextLine().toLowerCase(); 
     
     if (j1 == j2)) {
       System.out.println("Empate");
@@ -25,15 +24,21 @@ public class Codigo4 {
           if (j2 == "piedra") {
             g = 1;
           
-        case "tijera":
+        case "tijeras":
           if (j2.equals("papel")) {
             g = 1;
           }
           break;
+
         default:
+        System.out.println("Entrada no válida. Por favor, introduzca 'piedra', 'papel' o 'tijeras'.");
+        scanner.close(); // cerrar scanner
+        return; 
       }
-      System.out.println("Gana el jugador " + g);
+
+      System.out.println("Gana el jugador " + g); // mostrar ganador
     }
   
-  
-}
+     scanner.close(); // Cerrar el scanner
+    } // main
+} // class piedraPapelTijera
