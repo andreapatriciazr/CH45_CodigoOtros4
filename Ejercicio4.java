@@ -10,25 +10,28 @@ public class piedraPapelTijera { // definir un nombre relevante a la clase
         System.out.print("Turno del jugador 2 (introduzca piedra, papel o tijeras): ");
         String j2 = scanner.nextLine().toLowerCase(); 
     
-    if (j1 == j2)) {
+    if (j1.equals(j2))) {
       System.out.println("Empate");
     } else {
-      int g = 2;
+      int ganador = 2; // definir variable ganador para mayor entendimiento
       switch(j1) {
         case "piedra":
-          if (j2 == "tijeras") {
-            g = 1;
+          if (j2.equals("tijeras")) { 
+          ganador = 1;
           }
+          break; 
 
         case "papel":
-          if (j2 == "piedra") {
-            g = 1;
-          
-        case "tijeras":
-          if (j2.equals("papel")) {
-            g = 1;
+          if (j2.equals("piedra")) {
+          ganador = 1;
           }
-          break;
+          break; 
+
+          case "tijeras":
+          if (j2.equals("papel")) {
+          ganador = 1;
+          }
+        break; 
 
         default:
         System.out.println("Entrada no válida. Por favor, introduzca 'piedra', 'papel' o 'tijeras'.");
@@ -36,7 +39,7 @@ public class piedraPapelTijera { // definir un nombre relevante a la clase
         return; 
       }
 
-      System.out.println("Gana el jugador " + g); // mostrar ganador
+      System.out.println("Gana el jugador " + ganador); // mostrar ganador
     }
   
      scanner.close(); // Cerrar el scanner
